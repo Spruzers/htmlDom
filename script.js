@@ -6,8 +6,8 @@ var card_container = document.getElementById('card-container'),
 	query_container = document.querySelector('#card-container'),
 	body = document.getElementsByTagName('body');
 
-
-setInterval(function  () {
+var i = 100;
+var timer = setInterval(function  () {
 	card_container.style['background-color'] = 'rgb('
 					+ randColor()
 					+ ','
@@ -15,23 +15,24 @@ setInterval(function  () {
 					+ ','
 					+ randColor()
 					+ ')';
-		var new_card = document.createElement('div');
-			new_card.className = 'card';
-		card_container.appendChild(new_card);
-
-		function randColor () {
-			return Math.floor(Math.random() * 255);
-		};
 
 
-		for (var i = 0; i < cards.length; i++) {
-			cards[i].innerHTML = '<h1> I am card <b>NUMBER ' + (i + 1) + '</b></h1>';
-			cards[i].style['background-color'] = 'rgb('
-							+ randColor()
-							+ ','
-							+ randColor()
-							+ ','
-							+ randColor()
-							+ ')';
-		};
-}, 1000);
+
+			function randColor () {
+				return Math.floor(Math.random() * 255);
+			};
+
+			cards[0].innerHTML = '<h1>' + i + '</h1>';
+				cards[0].style['background-color'] = 'rgb('
+								+ randColor()
+								+ ','
+								+ randColor()
+								+ ','
+								+ randColor()
+								+ ')';
+	if (i == 0) {
+		clearInterval(timer);
+	}
+	i--
+}, 50);
+
