@@ -11,8 +11,17 @@ console.log(query_divs);
 console.log(query_container);
 console.log(body);
 
+function randColor () {
+	return Math.floor(Math.random() * 255);
+};
 
 for (var i = 0; i < cards.length; i++) {
 	cards[i].innerHTML = '<h1> I am card <b>NUMBER ' + (i + 1) + '</b></h1>';
-
+	cards[i].style.color = 'rgb('
+					+ randColor()
+					+ ','
+					+ randColor()
+					+ ','
+					+ randColor()
+					+ ')';
 };
